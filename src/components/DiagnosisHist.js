@@ -5,9 +5,10 @@ import RespiratoryRateIcon from '../asset/icons/respiratory-rate.svg'
 import TempIcon from '../asset/icons/temperature.svg'
 import Graph from './Graph'
 
+
 function DiagnosisHist() {
     return (
-        <div>
+        <div className='diagnosis-hist-container'>
             <div className='graph-container'>
                 <Graph />
             </div>
@@ -16,6 +17,7 @@ function DiagnosisHist() {
                 <HealthMetricCard icon={TempIcon} title="Temperature" value="98.6°F" status="Normal" bgColor={'rgba(255, 230, 233, 1)'} />
                 <HealthMetricCard icon={HeartRateIcon} title="Heart Rate" value="98.6°F" status="Lower than Average" bgColor={'rgba(255, 230, 241, 1)'} />
             </div>
+         
         </div>
     )
 }

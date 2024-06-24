@@ -3,6 +3,8 @@ import ProfileCard from '../components/ProfileCard'
 import Sidebar from '../components/Sidebar';
 import PatientDetails from '../components/PatientDetails';
 import DiagnosisHist from '../components/DiagnosisHist';
+import DiagnoList from '../components/DiagnoList'
+import LabResults from '../components/LabResults';
 
 
 
@@ -56,10 +58,18 @@ function MainLayout() {
     }
     return (
         <div className='main-layout-container'>
+            <div className='main-layout-subcontainer'>
+                <Sidebar patients={patients} onSelectPatient={setSelectedPatient} />
+                <div className='hist-list-layout'>
+                    <DiagnosisHist />
+                    <DiagnoList />
+                </div>
+            </div>
+            <div className='right-layout-container'>
+                <ProfileCard />
+                <LabResults />
+            </div>
 
-            {/* <Sidebar patients={patients} onSelectPatient={setSelectedPatient} /> */}
-            <DiagnosisHist />
-            <ProfileCard />
         </div>
     )
 }

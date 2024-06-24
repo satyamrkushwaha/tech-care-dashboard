@@ -11,16 +11,16 @@ const Graph = () => {
             {
                 label: 'Systolic',
                 data: [120, 130, 150, 140, 130, 160],
-                borderColor: 'rgba(255, 99, 132, 1)',
-                backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                borderColor: 'rgba(194, 110, 180, 1)',
+                backgroundColor: 'rgba(230, 111, 210, 1)',
                 fill: false,
                 tension: 0.1
             },
             {
                 label: 'Diastolic',
                 data: [100, 80, 70, 75, 65, 78],
-                borderColor: 'rgba(54, 162, 235, 1)',
-                backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                borderColor: 'rgba(126, 108, 171, 1)',
+                backgroundColor: 'rgba(140, 111, 230, 1)',
                 fill: false,
                 tension: 0.1
             }
@@ -31,7 +31,13 @@ const Graph = () => {
         responsive: true,
         plugins: {
             legend: {
-                position: 'top',
+                position: 'right',
+                labels: {
+                    usePointStyle: true,
+                    pointStyle: 'circle',
+                    boxWidth: 10,
+                    boxHeight: 10,
+                },
             },
             title: {
                 display: true,
@@ -48,9 +54,7 @@ const Graph = () => {
     };
 
     return (
-        <div style={{ width: '80vw', margin: 'auto' }}>
-            <Line data={data} options={options} />
-        </div>
+        <Line data={data} options={options} />
     );
 };
 
