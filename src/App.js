@@ -10,17 +10,9 @@ const App = () => {
 
   return (
     <div className="main-container">
-    <Navbar/>
+      <Navbar />
       <main className="main-subcontainer">
-      <MainLayout />
-   
- 
-        {/* <Header />
-        {selectedPatient ? (
-          <PatientDetails patient={selectedPatient} />
-        ) : (
-          <p>No patient selected</p>
-        )} */}
+        <MainLayout />
       </main>
     </div>
   );

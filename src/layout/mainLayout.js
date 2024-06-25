@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import ProfileCard from '../components/ProfileCard'
 import Sidebar from '../components/Sidebar';
-import PatientDetails from '../components/PatientDetails';
+// import PatientDetails from '../components/PatientDetails';
 import DiagnosisHist from '../components/DiagnosisHist';
 import DiagnoList from '../components/DiagnoList'
 import LabResults from '../components/LabResults';
@@ -13,6 +13,8 @@ function MainLayout() {
     const [selectedPatient, setSelectedPatient] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+
+    console.log(selectedPatient)
 
     useEffect(() => {
         const fetchPatients = async () => {
@@ -59,15 +61,15 @@ function MainLayout() {
     return (
         <div className='main-layout-container'>
             <div className='main-layout-subcontainer'>
-                <Sidebar patients={patients} onSelectPatient={setSelectedPatient} />
+                <Sidebar patients={patients} onSelectPatient={setSelectedPatient} selectedPatient={selectedPatient} />
                 <div className='hist-list-layout'>
-                    <DiagnosisHist />
-                    <DiagnoList />
+                    <DiagnosisHist selectedPatient={selectedPatient} />
+                    <DiagnoList selectedPatient={selectedPatient} />
                 </div>
             </div>
             <div className='right-layout-container'>
-                <ProfileCard />
-                <LabResults />
+                <ProfileCard selectedPatient={selectedPatient} />
+                <LabResults selectedPatient={selectedPatient} />
             </div>
 
         </div>

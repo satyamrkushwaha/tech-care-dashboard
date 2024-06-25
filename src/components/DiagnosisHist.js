@@ -6,11 +6,14 @@ import TempIcon from '../asset/icons/temperature.svg'
 import Graph from './Graph'
 
 
-function DiagnosisHist() {
+function DiagnosisHist({selectedPatient}) {
+
+    const { diagnosis_history } = selectedPatient;
+
     return (
         <div className='diagnosis-hist-container'>
             <div className='graph-container'>
-                <Graph />
+                <Graph diagnosis_history={diagnosis_history} />
             </div>
             <div className='health-metric-cards-container'>
                 <HealthMetricCard icon={RespiratoryRateIcon} title="Respiratory Rate" value="20 bpm" status="Normal" bgColor={'rgba(224, 243, 250, 1)'} />
