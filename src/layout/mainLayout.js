@@ -1,12 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import ProfileCard from '../components/ProfileCard'
 import Sidebar from '../components/Sidebar';
-// import PatientDetails from '../components/PatientDetails';
 import DiagnosisHist from '../components/DiagnosisHist';
 import DiagnoList from '../components/DiagnoList'
 import LabResults from '../components/LabResults';
-
-
 
 function MainLayout() {
     const [patients, setPatients] = useState([]);
@@ -52,11 +49,11 @@ function MainLayout() {
     }, []);
 
     if (loading) {
-        return <div className="container">Loading...</div>; // Display a loading indicator while fetching data
+        return <div className="container">Loading...</div>;
     }
 
     if (error) {
-        return <div className="container">Error: {error}</div>; // Display an error message if fetch fails
+        return <div className="container">Error: {error}</div>;
     }
     return (
         <div className='main-layout-container'>
